@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
 
 import * as SliderConstants from './constants/SliderConstants';
@@ -110,7 +110,7 @@ const defaultProps = {
   ],
 };
 
-class Rheostat extends React.Component {
+class Rheostat extends Component {
   constructor(props) {
     super(props);
 
@@ -696,13 +696,12 @@ class Rheostat extends React.Component {
 
     return (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-      <div
-        className={className}
+      <View
         ref={this.setRef}
-        onClick={!disabled ? this.handleClick : undefined}
+        onPress={!disabled ? this.handleClick : undefined}
         style={{ position: 'relative' }}
       >
-        <div className="rheostat-background" />
+        <View  />
         {handlePos.map((pos, idx) => {
           const handleStyle = orientation === 'vertical'
             ? { top: `${pos}%`, position: 'absolute' }
